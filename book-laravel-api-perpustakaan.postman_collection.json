@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "e4764630-b1a6-40f7-b42d-a77441be78ad",
+		"name": "book-laravel-api-perpustakaan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20948341"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/pengguna",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/book/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/pengguna/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/category/:id/show",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						":id",
+						"show"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/pengguna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "judul",
+							"value": "mengapa aku berbeda?",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/Users/diahnurkhasanah/Downloads/foto-leslie.png"
+						},
+						{
+							"key": "penerbit",
+							"value": "gramedia",
+							"type": "text"
+						},
+						{
+							"key": "kota",
+							"value": "bandung",
+							"type": "text"
+						},
+						{
+							"key": "bahasa",
+							"value": "indonesia",
+							"type": "text"
+						},
+						{
+							"key": "isbn",
+							"value": "7485625823687456",
+							"type": "text"
+						},
+						{
+							"key": "pengarang",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "gasdfaf",
+							"type": "text"
+						},
+						{
+							"key": "tahun",
+							"value": "2022",
+							"type": "text"
+						},
+						{
+							"key": "kategori",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "stok",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/book/store",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "judul",
+							"value": "mengapa aku berbeda?",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/Users/diahnurkhasanah/Downloads/foto-leslie.png"
+						},
+						{
+							"key": "penerbit",
+							"value": "gramedia",
+							"type": "text"
+						},
+						{
+							"key": "kota",
+							"value": "bandung",
+							"type": "text"
+						},
+						{
+							"key": "bahasa",
+							"value": "indonesia",
+							"type": "text"
+						},
+						{
+							"key": "isbn",
+							"value": "7485625823687456",
+							"type": "text"
+						},
+						{
+							"key": "pengarang",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "gasdfaf",
+							"type": "text"
+						},
+						{
+							"key": "tahun",
+							"value": "2022",
+							"type": "text"
+						},
+						{
+							"key": "kategori",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "stok",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/book/store",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"book",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/pengguna/:id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_kategori",
+							"value": "romance fun",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/Users/diahnurkhasanah/Downloads/ca-creative-E1rH__X9SA0-unsplash.jpg"
+						},
+						{
+							"key": "deksripsi",
+							"value": "flghkjdhgaoyasughaskjgbajks",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/category/:id/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						":id",
+						"update"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/pengguna/:id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/author/:id/delete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"author",
+						":id",
+						"delete"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
