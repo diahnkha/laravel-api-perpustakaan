@@ -25,29 +25,35 @@ class BookController extends Controller
      {
          $books = Book::query()->get();
 
-         $list = array();
-         foreach ($books as $book) {
-            $book = Book::query()->where("id", $book->id)->first();
-            $idpengarang = $book["pengarang"];
-            $idkategori = $book["kategori"];
-            $category = Category::query()->where("id", $idpengarang)->first();
-            $author = Author::query()->where("id", $idkategori)->first();
-            $listobject = [
-                "judul" =>$book->judul,
-                "foto" =>$book->foto,
-                "penerbit" =>$book->penerbit,
-                "kota" =>$book->kota,
-                "bahasa" =>$book->bahasa,
-                "isbn" =>$book->isbn,
-                "author" => $author,
-                "deskripsi" => $book->deskripsi,
-                "tahun" => $book->tahun,
-                "kategori" => $category,
-                "stok" => $book->stok
+         $list = $books->map(function($book){
+            $book['kategori'] = Category::query()->where("id", $book->kategori)->first();
+            $book['author'] = Author::query()->where("id", $book->pengarang)->first();
+            return $book;
+         });
 
-            ];
-            array_push($list, $listobject);
-          };
+        //  $list = array();
+        //  foreach ($books as $book) {
+        //     $book = Book::query()->where("id", $book->id)->first();
+        //     $idpengarang = $book["pengarang"];
+        //     $idkategori = $book["kategori"];
+        //     $category = Category::query()->where("id", $idpengarang)->first();
+        //     $author = Author::query()->where("id", $idkategori)->first();
+        //     $listobject = [
+        //         "judul" =>$book->judul,
+        //         "foto" =>$book->foto,
+        //         "penerbit" =>$book->penerbit,
+        //         "kota" =>$book->kota,
+        //         "bahasa" =>$book->bahasa,
+        //         "isbn" =>$book->isbn,
+        //         "author" => $author,
+        //         "deskripsi" => $book->deskripsi,
+        //         "tahun" => $book->tahun,
+        //         "kategori" => $category,
+        //         "stok" => $book->stok
+
+        //     ];
+        //     array_push($list, $listobject);
+        //   };
 
          return response()->json([
              "status" => true,
@@ -59,10 +65,8 @@ class BookController extends Controller
      function show($id)
      {
          $book = Book::query()->where("id", $id)->first();
-         $idpengarang = $book["pengarang"];
-         $idkategori = $book["kategori"];
-         $category = Category::query()->where("id", $idpengarang)->first();
-         $author = Author::query()->where("id", $idkategori)->first();
+         $category = Category::query()->where("id", $book->kategori)->first();
+         $author = Author::query()->where("id", $book->pengarang)->first();
 
          if ($book == null) {
              return response()->json([
